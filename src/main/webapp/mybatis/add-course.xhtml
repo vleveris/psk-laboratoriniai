@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+<h:head>
+    <title>Add course</title>
+</h:head>
+
+<h:body>
+    <h1>Add course</h1>
+    <nav>
+        <h:link outcome="/index">Main page</h:link>
+    </nav>
+    <h:form>
+        <div>
+            <h:outputLabel for="title">Title: </h:outputLabel>
+            <h:inputText id="title" value="#{coursesMyBatis.newCourse.title}" required="true"/>
+        </div>
+        <div>
+            <h:outputLabel for="university">University: </h:outputLabel>
+            <h:selectOneMenu id="university" value="#{coursesMyBatis.newCourse.universityId}" required="true">
+                <c:forEach items="#{universitiesMyBatis.allUniversities}" var="university">
+                    <f:selectItem itemValue="#{university.id}" itemLabel="#{university.name}"/>
+                </c:forEach>
+            </h:selectOneMenu>
+        </div>
+        <div>
+            <h:outputLabel for="lecturer">Lecturer: </h:outputLabel>
+            <h:selectOneMenu id="lecturer" value="#{coursesMyBatis.newCourse.lecturerId}" required="true">
+                <c:forEach items="#{lecturersMyBatis.allLecturers}" var="lecturer">
+                    <f:selectItem itemValue="#{lecturer.id}" itemLabel="#{lecturer.name}"  />
+
+                </c:forEach>
+            </h:selectOneMenu>
+        </div>
+        <h:commandButton value="Add" actionListener="#{coursesMyBatis.add}"
+                         action="courses?faces-redirect=true"/>
+    </h:form>
+</h:body>
+
+</html>

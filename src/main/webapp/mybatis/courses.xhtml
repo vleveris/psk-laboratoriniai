@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Course List</title>
+
+    <h:outputStylesheet>
+        table, th, td {
+            border: solid 1px black;
+        }
+    </h:outputStylesheet>
+</h:head>
+
+<h:body>
+    <h1>List of courses</h1>
+    <nav>
+        <h:link outcome="/index">Main page</h:link>
+    </nav>
+    <h:dataTable value="#{coursesMyBatis.allCourses}" var="course">
+        <h:column>
+            <c:facet name="header">Id</c:facet>
+            #{course.id}
+        </h:column>
+
+        <h:column>
+            <c:facet name="header">Title</c:facet>
+            #{course.title}
+        </h:column>
+
+        <h:column>
+            <c:facet name="header">Lecturer id</c:facet>
+            #{course.lecturer.id}
+        </h:column>
+        <h:column>
+            <c:facet name="header">Lecturer first name</c:facet>
+            #{course.lecturer.firstname}
+        </h:column>
+        <h:column>
+            <c:facet name="header">Lecturer last name</c:facet>
+            #{course.lecturer.lastname}
+        </h:column>
+
+        <h:column>
+            <c:facet name="header">University id</c:facet>
+            #{course.university.id}
+        </h:column>
+        <h:column>
+            <c:facet name="header">University name</c:facet>
+            #{course.university.name}
+        </h:column>
+    </h:dataTable>
+
+    <nav>
+        <h:link outcome="add-course">Add course</h:link>
+    </nav>
+</h:body>
+
+</html>
