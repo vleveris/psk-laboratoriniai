@@ -1,8 +1,7 @@
 package lab1.usecases;
 
-import lab1.mybatis.model.Lecturer;
 import lab1.mybatis.dao.LecturerMapper;
-import lab1.services.LecturerFullNameCreator;
+import lab1.mybatis.model.Lecturer;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,7 +24,7 @@ public class LecturersMyBatis {
     private List<Lecturer> allLecturers;
 
     @Inject
-    private LecturerFullNameCreator creator;
+    //private LecturerFullNameCreator creator;
 
     @PostConstruct
     public void init() {
@@ -38,7 +37,7 @@ public class LecturersMyBatis {
 
     @Transactional
     public void add() {
-        creator.createFullName(newLecturer);
+//        creator.createFullName(newLecturer);
         lecturerMapper.insert(newLecturer);
     }
 

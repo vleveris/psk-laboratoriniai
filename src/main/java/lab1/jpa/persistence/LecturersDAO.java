@@ -18,6 +18,13 @@ public class LecturersDAO {
 
     public void persist(Lecturer lecturer) {
         em.persist(lecturer);
+        em.flush();
+    }
+
+    public Lecturer update(Lecturer lecturer) {
+        Lecturer l = em.merge(lecturer);
+        em.flush();
+        return l;
     }
 
     public Lecturer findById(int id) {

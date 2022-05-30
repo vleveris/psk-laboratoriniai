@@ -1,11 +1,12 @@
 package lab1.mybatis.dao;
 
+import lab1.mybatis.model.Lecturer;
+import lab1.mybatis.model.University;
+import org.mybatis.cdi.Mapper;
+
 import java.util.List;
 import java.util.Set;
-import lab1.mybatis.model.University;
-import lab1.mybatis.model.Lecturer;
 
-import org.mybatis.cdi.Mapper;
 @Mapper
 
 public interface UniversityMapper {
@@ -48,6 +49,7 @@ public interface UniversityMapper {
      * @mbg.generated Sun May 22 01:44:44 EEST 2022
      */
     int updateByPrimaryKey(University record);
+
     Set<Lecturer> selectCoursesWithLecturers(int libraryId);
 
 }

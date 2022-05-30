@@ -8,7 +8,7 @@
 
     <h:outputStylesheet>
         table, th, td {
-            border: solid 1px black;
+        border: solid 1px black;
         }
     </h:outputStylesheet>
 </h:head>
@@ -27,6 +27,11 @@
         <h:column>
             <c:facet name="header">Title</c:facet>
             #{course.title}
+        </h:column>
+
+        <h:column>
+            <c:facet name="header">Number of students</c:facet>
+            #{course.numberOfStudents}
         </h:column>
 
         <h:column>

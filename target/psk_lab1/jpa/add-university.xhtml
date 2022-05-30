@@ -19,6 +19,13 @@
         <h:commandButton value="Add" actionListener="#{universitiesJPA.add}"
                          action="/index?faces-redirect=true"/>
     </h:form>
+    <h:form>
+        <h:commandButton value="Suggest address"
+                         disabled="#{addressGenerator.generationRunning}"
+                         actionListener="#{addressGenerator.generateNewAddress}"/>
+        <h:commandButton rendered="#{addressGenerator.generationRunning}" value="Refresh" />
+        <h:outputText value=" #{addressGenerator.addressGenerationStatus}" />
+    </h:form>
 </h:body>
 
 </html>

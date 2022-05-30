@@ -28,7 +28,10 @@ public class University {
     private List<Course> courses;
 
     @ManyToMany
-    private Set<Lecturer> coursesWithLecturers= new HashSet<>();
+    private Set<Lecturer> coursesWithLecturers = new HashSet<>();
+    @Version
+    @Column(name = "opt_lock_version")
+    private int optLockVersion;
 
     @Override
     public boolean equals(Object other) {

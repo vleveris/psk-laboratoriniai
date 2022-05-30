@@ -1,8 +1,10 @@
 package lab1.usecases;
 
-import lab1.mybatis.model.*;
+
 import lab1.mybatis.dao.CourseMapper;
+import lab1.mybatis.dao.LecturerMapper;
 import lab1.mybatis.dao.UniversityMapper;
+import lab1.mybatis.model.Course;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,6 +20,9 @@ public class CoursesMyBatis {
     private CourseMapper courseMapper;
     @Inject
     private UniversityMapper universityMapper;
+
+    @Inject
+    private LecturerMapper lecturerMapper;
 
     @Getter
     @Setter

@@ -31,6 +31,9 @@ public class Lecturer {
 
     @ManyToMany(mappedBy = "coursesWithLecturers")
     private Set<University> universities;
+    @Version
+    @Column(name = "opt_lock_version")
+    private int optLockVersion;
 
     @Override
     public boolean equals(Object other) {

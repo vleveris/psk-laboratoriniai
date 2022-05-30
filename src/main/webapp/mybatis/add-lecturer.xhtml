@@ -13,11 +13,11 @@
     </nav>
     <h:form>
         <div>
-            <h:outputLabel for="firstName">First name: </h:outputLabel>
+            <h:outputLabel for="firstName">First name:</h:outputLabel>
             <h:inputText id="firstName" value="#{lecturersMyBatis.newLecturer.firstname}" required="true"/>
         </div>
         <div>
-            <h:outputLabel for="lastName">Last name: </h:outputLabel>
+            <h:outputLabel for="lastName">Last name:</h:outputLabel>
             <h:inputText id="lastName" value="#{lecturersMyBatis.newLecturer.lastname}" required="true"/>
         </div>
         <h:commandButton value="Add" actionListener="#{lecturersMyBatis.add}"

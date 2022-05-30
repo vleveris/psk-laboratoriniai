@@ -14,11 +14,11 @@
     </nav>
     <h:form>
         <div>
-            <h:outputLabel for="title">Title: </h:outputLabel>
+            <h:outputLabel for="title">Title:</h:outputLabel>
             <h:inputText id="title" value="#{coursesJPA.newCourse.title}" required="true"/>
         </div>
         <div>
-            <h:outputLabel for="university">University: </h:outputLabel>
+            <h:outputLabel for="university">University:</h:outputLabel>
             <h:selectOneMenu id="university" value="#{coursesJPA.newCourse.university.id}" required="true">
                 <c:forEach items="#{coursesJPA.allUniversities}" var="university">
                     <f:selectItem itemValue="#{university.id}" itemLabel="#{university.name}"/>
@@ -26,10 +26,10 @@
             </h:selectOneMenu>
         </div>
         <div>
-            <h:outputLabel for="lecturer">Lecturer: </h:outputLabel>
+            <h:outputLabel for="lecturer">Lecturer:</h:outputLabel>
             <h:selectOneMenu id="lecturer" value="#{coursesJPA.newCourse.lecturer.id}" required="true">
                 <c:forEach items="#{lecturersJPA.allLecturers}" var="lecturer">
-                    <f:selectItem itemValue="#{lecturer.id}" itemLabel="#{lecturer.name}"  />
+                    <f:selectItem itemValue="#{lecturer.id}" itemLabel="#{lecturer.name}"/>
 
                 </c:forEach>
             </h:selectOneMenu>

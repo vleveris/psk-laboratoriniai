@@ -30,6 +30,11 @@
         </h:column>
 
         <h:column>
+            <c:facet name="header">Number of students</c:facet>
+            #{course.numberOfStudents}
+        </h:column>
+
+        <h:column>
             <c:facet name="header">Lecturer id</c:facet>
             #{course.lecturer.id}
         </h:column>

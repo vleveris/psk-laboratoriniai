@@ -20,9 +20,23 @@ public class CoursesDAO {
 
     public void persist(Course course) {
         em.persist(course);
+        em.flush();
     }
 
-    public Course findById(int id) {
+    public Course findById(long id) {
         return em.find(Course.class, id);
     }
+
+    public Course update(Course course) {
+        Course c = em.merge(course);
+        em.flush();
+        return c;
+    }
+
+    public List<Course> findByLecturerId(int lecturerId) {
+        return em.createNamedQuery("Course.findByLecturerId", Course.class).
+                setParameter("lecturer", lecturerId).
+                getResultList();
+    }
+
 }

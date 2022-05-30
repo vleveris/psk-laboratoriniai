@@ -1,7 +1,7 @@
 package lab1.usecases;
 
-import lab1.mybatis.model.University;
 import lab1.mybatis.dao.UniversityMapper;
+import lab1.mybatis.model.University;
 import lombok.Getter;
 import lombok.Setter;
 
